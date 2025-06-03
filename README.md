@@ -1,7 +1,3 @@
-Sure! Here’s a clean, detailed, and professional **GitHub README.md** template for your hand-tracking target game with leaderboard and PyQt5 GUI. It includes all essential sections and explains how to set up, run, and contribute.
-
----
-
 ````markdown
 # Hand Tracking Target Game 🎯🖐️
 
