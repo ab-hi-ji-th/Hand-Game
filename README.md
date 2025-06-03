@@ -21,8 +21,14 @@ The game detects your hand movements via webcam and challenges you to hit random
 
 ## Demo Screenshot
 
-![Demo Screenshot](path/to/screenshot.png)  
-*(Add your game screenshot or gif here)*
+![Screenshot 2025-06-04 002827](https://github.com/user-attachments/assets/da06073f-18bc-478f-9709-c1572a70683d)
+
+![Screenshot 2025-06-04 002959](https://github.com/user-attachments/assets/cf23cf9e-3ece-441b-876e-abc6dfb7fe6d)
+
+![Screenshot 2025-06-04 002906](https://github.com/user-attachments/assets/add7a2d4-c2f3-4027-92a8-0aaef911f56a)
+
+![Screenshot 2025-06-04 002927](https://github.com/user-attachments/assets/5928cd3b-381e-4d43-9944-641bc5da7ae7)
+
 
 ---
 
