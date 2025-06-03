@@ -1,4 +1,3 @@
-````markdown
 # 🎯 Hand Tracking Target Game 🖐️
 
 A fun and interactive **hand-tracking target shooting game** using **OpenCV**, **MediaPipe**, **PyGame**, and **PyQt5** for GUI menus and leaderboards.  
