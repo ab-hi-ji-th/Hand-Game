@@ -1,103 +1,167 @@
-# Hand Tracking Game with High Score Tracking
-
-This repository contains a Python-based hand tracking game that allows users to score points by interacting with on-screen objects using hand gestures. The game utilizes the webcam to detect hand movements and provides a high score system that saves and loads the player's best score. The game displays real-time feedback on the score, high score, and remaining time.
-
-## Features
-
-- **Hand Gesture Detection**: The game uses the webcam to track hand movements and detects finger positions.
-- **Score System**: Players score points by interacting with a randomly moving enemy object.
-- **High Score**: The game stores the highest score and player's name in a local JSON file (`high_score.json`).
-- **Background Music**: Background music is played during the game to enhance the experience.
-- **Sound Effects**: A sound effect is played each time the player scores a point.
-- **Timer**: The game has a time limit, and the score is reset after the time expires.
-- **Final Score Display**: At the end of the game, the final score and the high score are displayed.
-- **Customizable**: The window size and other settings are adjustable.
-
-## Dependencies
-
-The following libraries are required to run this game:
-
-- **OpenCV**: For real-time video capture and image processing.
-- **MediaPipe**: For hand landmark detection.
-- **Pygame**: For playing sound effects and background music.
-- **JSON**: For saving and loading the high score data.
-
-### To install the required libraries, run:
-
-```bash
-pip install opencv-python mediapipe pygame
-```
-
-## How to Play
-
-1. **Start the Game**: Run the script to start the game. Ensure that your webcam is connected and accessible.
-2. **Gameplay**:
-   - Move your hand in front of the webcam.
-   - Score points by bringing your hand close to the moving green enemy circle.
-   - The score will increase each time you interact with the enemy.
-   - The game will automatically start a timer, and when the time expires, the final score will be displayed.
-3. **High Score**: If your score beats the current high score, you will be prompted to enter your name. This name will be saved along with your score in the `high_score.json` file.
-4. **Exit**: To exit the game at any time, press the 'Q' key.
-
-## Game Flow
-
-1. **Hand Detection**: The game uses MediaPipe to track the user's hand landmarks in real-time.
-2. **Point Scoring**: The game continuously checks if the player's index finger tip comes close to the enemy object. If so, the player scores a point, and the enemy object moves to a new random position.
-3. **Timer**: The game runs for a fixed duration (30 seconds) and stops when the timer reaches zero.
-4. **High Score**: After the game ends, if the player achieves a new high score, they will be asked to provide their name, which will then be saved in the `high_score.json` file.
-5. **Final Display**: The final score and high score are shown on the screen for 5 seconds after the game ends before the program exits.
-
-## Code Explanation
-
-### 1. **High Score Functions**
-   - `load_high_score()`: Loads the high score data from the `high_score.json` file. If the file doesn't exist or is empty, it returns default values.
-   - `save_high_score(name, score)`: Saves the new high score with the player's name to the `high_score.json` file.
-
-### 2. **Sound Functions**
-   - `play_background_music()`: Plays the background music (`score.wav`) when the game starts.
-   - `play_score_sound()`: Plays a sound effect (`laser_score.wav`) whenever the player scores a point.
-
-### 3. **Main Game Loop**
-   - The game loop captures frames from the webcam, processes them to detect hand landmarks, and checks if the player's index finger interacts with the enemy object.
-   - The score is updated each time the player successfully interacts with the enemy.
-   - The timer counts down, and when the time is up, the final score is displayed, and the game ends.
-
-### 4. **Timer Logic**
-   - The remaining time is displayed on the screen in the format `Time: MM:SS`.
-   - The game checks whether the timer has expired and updates the high score if needed.
-
-### 5. **Enemy Object Logic**
-   - The enemy object is drawn as a green circle that moves randomly on the screen.
-   - The enemy moves to a new random location when the player scores a point.
-
-### 6. **End of Game**
-   - When the timer expires, the game will prompt the user to enter their name if they beat the high score.
-   - The final score and the high score are displayed on the screen for 5 seconds.
-
-## Files in the Repository
-
-- `game.py`: The main script that runs the game.
-- `high_score.json`: Stores the high score and the player's name.
-- `score.wav`: Background music played during the game.
-- `laser_score.wav`: Sound effect played when the player scores a point.
-
-## To Run the Game
-
-1. Clone this repository to your local machine.
-2. Ensure the required libraries (`opencv-python`, `mediapipe`, and `pygame`) are installed.
-3. Run the `game.py` script in your terminal or IDE.
-
-```bash
-python game.py
-```
-
-The game will start, and you can interact with it using your hand in front of the webcam.
-
-## Notes
-
-- Ensure your webcam is properly connected and accessible by OpenCV.
-- If you want to change the game's duration, you can modify the `duration` variable in the code.
-- You can also adjust the window size or disable the full-screen mode by modifying the `cv2.resizeWindow()` settings.
+Sure! Here’s a clean, detailed, and professional **GitHub README.md** template for your hand-tracking target game with leaderboard and PyQt5 GUI. It includes all essential sections and explains how to set up, run, and contribute.
 
 ---
 
+````markdown
+# Hand Tracking Target Game 🎯🖐️
+
+A fun and interactive hand-tracking target shooting game using **OpenCV**, **MediaPipe**, **PyGame**, and **PyQt5** for GUI menus and leaderboards. The game detects your hand movements via webcam and challenges you to hit randomly spawning targets within a time limit.
+
+---
+
+## Features
+
+- **Easy, Medium, and Hard difficulty levels** with different target sizes and durations.
+- Real-time **hand tracking** powered by **MediaPipe Hands**.
+- Scoring system with sound effects.
+- **Pink bonus targets** that add extra time when hit.
+- **High score leaderboard** saved locally in JSON files, with top 5 scores per difficulty.
+- GUI menus for starting single/multiplayer games, instructions, and viewing leaderboards.
+- Name input collected **before the game starts**.
+- Post-game leaderboard display with options to return to the main menu or exit.
+- Multiplayer support with individual player scores and winner announcement.
+
+---
+
+## Demo Screenshot
+
+![Demo Screenshot](path/to/screenshot.png)  
+*(Add your game screenshot or gif here)*
+
+---
+
+## Installation
+
+1. **Clone this repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/hand-tracking-target-game.git
+   cd hand-tracking-target-game
+````
+
+2. **Set up a Python virtual environment (recommended):**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Linux/macOS
+   .\venv\Scripts\activate   # Windows
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+---
+
+## Dependencies
+
+* Python 3.7+
+* OpenCV (`opencv-python`)
+* MediaPipe (`mediapipe`)
+* PyGame (`pygame`)
+* PyQt5 (`PyQt5`)
+
+The `requirements.txt` file includes all required libraries:
+
+```
+opencv-python
+mediapipe
+pygame
+PyQt5
+```
+
+---
+
+## Usage
+
+### Running the Game
+
+Run the main menu GUI:
+
+```bash
+python start_menu.py
+```
+
+This opens a window with options:
+
+* **Single Player:** Select difficulty and start a solo game.
+* **Multiplayer:** Enter number of players and their names, then select difficulty.
+* **Instructions:** View gameplay instructions.
+* **Exit Game:** Close the application.
+
+### Controls
+
+* Use your index finger tip to "hit" the green circular targets.
+* After hitting 3 targets, a pink square target appears. Hitting it adds bonus time.
+* The game runs for a fixed time based on difficulty.
+* Press `q` at any time to quit the game.
+
+---
+
+## Project Structure
+
+```
+├── assets/                # Sound files and other assets
+├── high_scores/           # Folder where leaderboard JSON files are saved
+├── game.py                # Main gameplay logic and hand tracking
+├── leaderboard.py         # Functions for leaderboard handling
+├── start_menu.py          # PyQt5 main menu GUI
+├── instructions.py        # Instructions page GUI (if implemented)
+├── README.md              # This file
+├── requirements.txt       # Python dependencies
+```
+
+---
+
+## How it Works
+
+* **Hand tracking**: Uses MediaPipe to detect hand landmarks via webcam.
+* **Game logic**: Spawns targets, checks if the index finger tip hits targets, updates score and timer.
+* **Leaderboard**: Scores are saved per difficulty level in JSON files inside the `high_scores` folder.
+* **GUI**: PyQt5 interfaces handle user input (player names, difficulty selection) and show leaderboard with options to restart or exit.
+
+---
+
+## Contributing
+
+Contributions are welcome!
+Please follow these steps:
+
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature-name`).
+3. Make your changes.
+4. Commit and push (`git commit -m 'Add feature' && git push`).
+5. Open a Pull Request.
+
+---
+
+## Known Issues
+
+* Ensure your webcam works with OpenCV.
+* The game requires a reasonably powerful CPU to maintain real-time hand tracking.
+* Sound file paths (`assets/score.wav` and `assets/laser_score.wav`) must be correct.
+
+---
+
+## License
+
+MIT License © \[Abhijith p v]
+
+---
+
+## Contact
+
+For questions or suggestions, open an issue or contact me at \[[abhijithpv32@gmail.com](mailto:abhijithpv32@gmail.com)].
+
+---
+
+Enjoy playing! 🎉
+
+```
+
+---
+
+If you want, I can help you generate the `requirements.txt` too or assist with adding images or badges. Just ask!
+```
