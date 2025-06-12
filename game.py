@@ -10,7 +10,7 @@ from leaderboard import update_leaderboard
 
 
 def show_leaderboard_and_options(difficulty):
-    try:
+    try: 
         with open("leaderboard.json", "r") as f:
             data = json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
