@@ -5,7 +5,7 @@ The game detects your hand movements via webcam and challenges you to hit random
 
 ---
 
-## Features
+## Features 
 
 - **Easy, Medium, and Hard difficulty levels** with different target sizes and durations.
 - Real-time **hand tracking** powered by **MediaPipe Hands**.
