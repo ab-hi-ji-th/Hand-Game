@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
 
-
+ 
 class InstructionsPage(QDialog):
     def __init__(self):
         super().__init__()
