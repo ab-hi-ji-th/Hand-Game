@@ -1,7 +1,7 @@
 import json
 import os
 
-
+ 
 def load_leaderboard(difficulty):
     os.makedirs('high_scores', exist_ok=True)
     path = os.path.join('high_scores', f"{difficulty}.json")
