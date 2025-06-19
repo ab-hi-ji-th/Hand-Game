@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QWidget, QVBoxLayout, QPushButton, QInputDialog, QMe
 from instructions import InstructionsPage
 from game import run_game
 import sys
-
+ 
 
 class StartMenu(QWidget):
     def __init__(self):
