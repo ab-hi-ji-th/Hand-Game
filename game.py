@@ -36,7 +36,7 @@ def show_leaderboard_and_options(difficulty):
 
 
 def get_player_name():
-    app = QApplication.instance()  # ✅ Check if an instance already exists
+    app = QApplication.instance()   
     if app is None:
         app = QApplication([])
 
