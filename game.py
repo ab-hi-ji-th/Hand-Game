@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import QApplication, QInputDialog, QMessageBox
 import sys
 from leaderboard import update_leaderboard
 
-
+ 
 def show_leaderboard_and_options(difficulty):
     try: 
         with open("leaderboard.json", "r") as f:
